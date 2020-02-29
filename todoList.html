@@ -6,7 +6,13 @@
   </head>
 
   <body>
-    HTML GOES HERE
+    <h1>Todo List</h1>
+
+    <button id="displayTodosButton">Display Todos</button>
+    <button>Toggle All</button>
+    
+  
+
     <script>
       var todoList = {
         todos: [],
@@ -71,9 +77,17 @@
         }
       };
       
-      
- 
-    
+      // 1. We want to get access to the display todos button
+      var displayTodosButton = document.getElementById('displayTodosButton');
+      console.log(displayTodosButton);
+
+      // 2. We want to run displayTodos method, when someone clicks the display 
+      // todos button
+
+      displayTodosButton.addEventListener('click', function() {
+        todoList.displayTodos();
+      });
+
     </script>
   </body>
 </html>
