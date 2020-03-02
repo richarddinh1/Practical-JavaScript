@@ -24,6 +24,11 @@
      <input id="changeTodoTextInput" type="text">
     </div>
 
+    <div>
+      <button onclick="handlers.deleteTodo()">Delete</button>
+      <input id="deleteTodoPositionInput" type="number">
+    </div>
+
     <script>
       var todoList = {
         todos: [],
@@ -90,10 +95,10 @@
       
 
       var handlers = {
-        displayTodos: function () {
+        displayTodos: function() {
           todoList.displayTodos();
         },
-        toggleAll: function () {
+        toggleAll: function() {
           todoList.toggleAll();
         },
         addTodo: function() {
@@ -107,6 +112,11 @@
           todoList.changeTodo(changeTodoPositionInput.valueAsNumber, changeTodoTextInput.value);
           changeTodoPositionInput.value = '';
           changeTodoTextInput.value = '';
+        },
+        deleteTodo: function() {
+          var deleteTodoPositionInput = document.getElementById('deleteTodoPositionInput');
+          todoList.deleteTodo(deleteTodoPositionInput.valueAsNumber);
+          deleteTodoPositionInput.value = '';
         }
       };
 
