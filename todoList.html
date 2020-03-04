@@ -143,6 +143,12 @@
         }
       };
 
+      var todosUl = document.querySelector('ul');
+
+      todosUl.addEventListener('click', function() {
+        console.log(event.target.parentNode.id);
+      });
+
     </script>
   </body>
 </html>
